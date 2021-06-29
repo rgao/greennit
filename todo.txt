@@ -1,0 +1,4 @@
+Next to do...
+
+1. implement server config
+2. implement postgresql connection
