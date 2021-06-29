@@ -1,16 +1,18 @@
-const path = require('path');
-
-const cors = require('cors');
-app.use(cors(config.corsOptions));
-
-require('dotenv').config()
+require('dotenv').config();
 
 const express = require('express');
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use(express.static("client/build"));
+const cors = require('cors');
+app.use(cors(config.corsOptions));
+
+const logger = require('morgan');
+app.use(logger('dev'));
+
+const path = require('path');
+app.use(express.static(path.join(__dirname, 'public')));
 // if (process.env.NODE_ENV === "production") {
 //     app.use(express.static("client/build"));
 // };
