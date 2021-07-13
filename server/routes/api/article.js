@@ -10,6 +10,6 @@ const articleController = require("../../controllers/articleController");
 
 router.route("/test")
     .get(articleController.testget)
-    // .post(articleController.testpost);
+    .post(articleController.testpost);
 
 module.exports = router;
