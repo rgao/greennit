@@ -13,6 +13,7 @@ class App extends Component {
     return (
       <Router>
         <div>
+          hi
           <Switch>
             <Route exact path="/" component={Home} />
             {/* future home page will be unique to each user*/}

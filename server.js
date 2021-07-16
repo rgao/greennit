@@ -20,8 +20,11 @@ console.log(path.join(__dirname, 'client'))
 const routes = require("./server/routes/index.js");
 app.use(routes);
 
-const PORT = process.env.PORT || 5000;
+var db = require("./server/database/models");
 
-app.listen(PORT, function () {
-  console.log(`API Server now listening on PORT ${PORT}!`);
+const PORT = process.env.PORT || 3001;
+db.sequelize.sync({ force: true }).then(function() {
+  app.listen(PORT, function () {
+    console.log(`API Server now listening on PORT ${PORT}!`);
+  });
 });
