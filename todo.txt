@@ -1,5 +1,0 @@
-Next to do...
-
-1. implement server config
-2. implement postgresql connection
-3. access:  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
